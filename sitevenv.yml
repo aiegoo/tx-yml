@@ -42,6 +42,7 @@ root: /root/repos/SiteVenv
 startup_window: editor
 
 windows:
+  - server: source /root/repos/SiteVenv/bin/activate && python server.py runserver 159.65.8.38:10055
   - editor:
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.

@@ -43,7 +43,7 @@ root: /home/pawan/repos/mydjangobooks
 startup_window: editor
 
 windows:
-  - server: python manage.py runserver 159.65.8.38:8086
+  - server: conda activate oscar && python manage.py runserver 159.65.8.38:8086
   - editor:
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
@@ -53,5 +53,5 @@ windows:
         - vim +CtrlP
         - cd /home/pawan/repos
         - tail -f /proc/3788/fd/1
-  - server: tail -f /proc/30396/fd/1
+  - server: tail -f /proc/3788/fd/1
   - logs: tail -f nohup.out

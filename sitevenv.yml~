@@ -1,7 +1,7 @@
 # /root/.config/tmuxinator/sitevenv.yml
 
 name: sitevenv
-root: ~/
+root: /root/repos/SiteVenv
 
 # Optional tmux socket
 # socket_name: foo
@@ -39,14 +39,18 @@ root: ~/
 # Controls whether the tmux session should be attached to automatically. Defaults to true.
 # attach: false
 
+startup_window: editor
+
 windows:
   - editor:
+  - server: source /root/repos/SiteVenv/bin/activate && python server.py runserver 159.65.8.38:10055
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - vim
-        - guard
-  - server: bundle exec rails s
-  - logs: tail -f log/development.log
+        - vim +CtrlP
+        - source /root/repos/SiteVenv/bin/activate
+        - tail -f /proc/11114/fd/1
+  - server: tail -f /proc/11114/fd/1
+  - logs: tail -f nohup.out
