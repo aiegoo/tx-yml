@@ -51,7 +51,7 @@ windows:
         - vim ~/.vimrc
         - vim ~/.bashrc
         - vim ~/.tmux.conf
-  - remote: exit && conda deactivate
+  - remote: 
       layout: main-vertical
       panes:
         - cd ~/.config/tmuxinator && git adds "update" && git p
