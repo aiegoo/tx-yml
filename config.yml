@@ -55,4 +55,4 @@ windows:
       layout: main-vertical
       panes:
         - cd ~/.config/tmuxinator && git adds "update" && git p
-        - cd cp ~/.vimrc ~/repos/tmux/. && cp ~/.bash.rc ~/repos/tmux/. && cp ~/.tmux.conf ~/repos/tmux/. && git adds "update" && git p
+        - cp ~/.vimrc ~/repos/tmux/. && cp ~/.bash.rc ~/repos/tmux/. && cp ~/.tmux.conf ~/repos/tmux/. && git adds "update" && git p
