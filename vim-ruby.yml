@@ -1,7 +1,7 @@
-# /root/.config/tmuxinator/udemy.yml
+# /root/.config/tmuxinator/vim-ruby.yml
 
-name: udemy
-root: ~/repos/udemy/shellscript/exercises
+name: vim-ruby
+root: ~/repos/udemy/vim-ruby
 
 # Optional tmux socket
 # socket_name: foo
@@ -47,16 +47,16 @@ windows:
         - top
         - uptime
         - whoami
-        - conda activate udemy  && python manage.py runserver 159.65.8.38:10088
+        - conda activate udemy  && ruby rails -s
   - editor:
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - cd ~/repos/udemy/shellscript && vim +CtrlP
-        - cd ~/repos/udemy/shellscript/exercises
-        - vim && !tmux run-shell -t 2 "make"
+        - cd ~/repos/udemy/vim-ruby && vim +CtrlP
+        - cd ~/repos/udemy/vim-ruby
+        - tmux run-shell -t 2
   - io_things:
       layout: tiled
       panes:

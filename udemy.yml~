@@ -59,9 +59,9 @@ windows:
         - tmux run-shell -t 2
   - io_things:
       layout: tiled
-      panets:
+      panes:
         - lsof
-        - iostat -w 10
+        - iostat -t
         - netstat
         - vim
   - logs: tail -f nohup.out
