@@ -1,7 +1,7 @@
 # /root/.config/tmuxinator/test.yml
 
 name: test
-root: ~/
+root: ~/repos/udemy/shellscript/shellclass
 
 # Optional tmux socket
 # socket_name: foo
@@ -39,6 +39,8 @@ root: ~/
 # Controls whether the tmux session should be attached to automatically. Defaults to true.
 # attach: false
 
+startup_window: editor
+
 windows:
   - editor:
       layout: main-vertical
@@ -46,7 +48,9 @@ windows:
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - vim
-        - guard
+        - p1:
+          - vim +CtrlP
+        - p2:
+          - conda deactivate
   - server: bundle exec rails s
   - logs: tail -f log/development.log

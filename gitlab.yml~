@@ -1,7 +1,7 @@
-# /root/.config/tmuxinator/django2.yml
+# /root/.config/tmuxinator/gitlab.yml
 
-name: django2
-root: ~/repos/udemy/django2
+name: gitlab
+root: ~/repos/portfolio
 
 # Optional tmux socket
 # socket_name: foo
@@ -42,22 +42,13 @@ root: ~/repos/udemy/django2
 startup_window: editor
 
 windows:
-  - database: source ~/repos/udemy/django2/src/try_django/bin/activate && workon try_django
-  - status:
-    layout: main-horizontal
-    panes:
-      - htop
-      - uptime
-      - cd ~/repos/udemy/django2
-      - tail -f nohup.out
   - editor:
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - source ~/repos/udemy/django2/src/try_django/bin/activate && cd ~/repos/udemy/django2 && vim +CtrlP
-        - source ~/repos/udemy/django2/src/try_django/bin/activate && cd ~/repos/udemy/django2 && git remote show upstream
-        - tmux list-clients
-        - cd ~/repos/udemy/django2/src  && python manage.py runserver 159.65.8.38:10051
-  - logs: tail -f /proc/pid/fd/1
+        - vim +CtrlP
+        - cd ml-wiki && gollub
+  - server: bundle exec rails s
+  - logs: tail -f log/development.log

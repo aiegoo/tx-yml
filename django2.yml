@@ -44,12 +44,12 @@ startup_window: editor
 windows:
   - database: source ~/repos/udemy/django2/src/try_django/bin/activate && workon try_django
   - status:
-    layout: main-horizontal
-    panes:
-      - htop
-      - uptime
-      - cd ~/repos/udemy/django2
-      - tail -f nohup.out
+      layout: main-horizontal
+      panes:
+       - htop
+       - uptime
+       - cd ~/repos/udemy/django2
+       - tail -f nohup.out
   - editor:
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
