@@ -1,7 +1,7 @@
 # /root/.config/tmuxinator/bstagram.yml
 
 name: bstagram
-root: ~/
+root: ~/django/django-web/dstagram
 
 # Optional tmux socket
 # socket_name: foo
@@ -38,8 +38,10 @@ root: ~/
 
 # Controls whether the tmux session should be attached to automatically. Defaults to true.
 # attach: false
+startup_window: editor
 
 windows:
+  - server: heroku local -p 3000
   - editor:
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
@@ -47,6 +49,6 @@ windows:
       # synchronize: after
       panes:
         - vim
-        - guard
-  - server: bundle exec rails s
+        - python manage.py runserver 159.65.8.38:8089
+        - tail -f /proc/20552/fd/1
   - logs: tail -f log/development.log
