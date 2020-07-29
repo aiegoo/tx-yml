@@ -1,11 +1,7 @@
 # /root/.config/tmuxinator/bstagram.yml
 
-name: bstagram
-<<<<<<< HEAD
-root: ~/django/django-web/dstagram
-=======
-root: ~/django/django-web/dstagram-django
->>>>>>> 5742155aa33abfec99e2e4464387bfd8075fd74e
+name: hanbit
+root: ~/repos/rapa/hanbit/
 
 # Optional tmux socket
 # socket_name: foo
@@ -45,18 +41,14 @@ root: ~/django/django-web/dstagram-django
 startup_window: editor
 
 windows:
-<<<<<<< HEAD
-  - server: heroku local -p 3000
-=======
-  - server: heroku local -p 3001
->>>>>>> 5742155aa33abfec99e2e4464387bfd8075fd74e
+  - server: conda activate hanbit && python manage.py runserver ip 159.65.8.38:10020
   - editor:
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - vim
-        - python manage.py runserver 159.65.8.38:8089
+        - vim +CtrlP
+        - cd ~/repos/rapa/hanbit 
         - tail -f /proc/20552/fd/1
-  - logs: tail -f log/development.log
+        - logs: tail -f log/development.log
