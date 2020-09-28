@@ -1,7 +1,7 @@
 # /root/.config/tmuxinator/test.yml
 
 name: test
-root: ~/repos/udemy/shellscript
+root: ~/repos/rapa/django-raspi
 
 # Optional tmux socket
 # socket_name: foo
@@ -49,8 +49,12 @@ windows:
       # synchronize: after
       panes:
         - p1:
-          - vim +CtrlP
+          - cd ~/repos/rapa/django-raspi && conda activate raspi && vim +CtrlP
         - p2:
           - conda deactivate
-  - server: bundle exec rails s
-  - logs: tail -f log/development.log
+          - server: conda activate raspi && python3 manage.py runserver 159.65.8.38:9001
+  - logs:
+      layout: main-vertical
+      panes:
+        -p1:
+          - cd ~/repos/rapa/django-raspi/api && python3 manage.py arduionoserial.py
