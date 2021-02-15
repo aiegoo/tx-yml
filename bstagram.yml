@@ -41,7 +41,7 @@ root: ~/django/django-web/dstagram
 startup_window: editor
 
 windows:
-  - server: heroku local -p 3000
+  - server: heroku local -p 3001
   - editor:
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
