@@ -1,7 +1,7 @@
 # /root/.config/tmuxinator/bstagram.yml
 
-name: bstagram
-root: ~/
+name: hanbit
+root: ~/repos/rapa/hanbit/
 
 # Optional tmux socket
 # socket_name: foo
@@ -38,16 +38,17 @@ root: ~/
 
 # Controls whether the tmux session should be attached to automatically. Defaults to true.
 # attach: false
+startup_window: editor
 
 windows:
-  - server: heroku local -p 3001
+  - server:  workon hanbit && python333 manage.py runserver ip 159.65.8.38:10020
   - editor:
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - vim
-        - guard
-  - server: bundle exec rails s
-  - logs: tail -f log/development.log
+        - workon hanbit && vim +CtrlP
+        - cd ~/repos/rapa/hanbit && conda deactivate
+        - tail -f /proc/20552/fd/1
+        - logs: tail -f log/development.log
